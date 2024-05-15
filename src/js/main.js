@@ -1,3 +1,4 @@
+
 import { pets } from '../../public/database/database'
 import '../scss/style.scss'
 import * as bootstrap from 'bootstrap'
@@ -24,4 +25,15 @@ for (const pet of pets) {
 
 
 
+
+
 console.table(pets)
+
+table.addEventListener("click", function (event) {
+    if (event.target.classList.contains("btn-danger")) {
+      const IdToEliminate = event.target.getAttribute("data-id");
+      eliminate(coders, IdToEliminate);
+      listWithInner(coders, tbody);
+      showSmallAlertSuccess("element deleted");
+    }
+  });
